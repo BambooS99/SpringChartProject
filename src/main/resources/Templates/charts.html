@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Charts</title>
+  </head>
+  <body>
+    <h1>Charts</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Days</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="chart : ${charts}">
+          <td th:text="${chart.id}"></td>
+          <td th:text="${chart.name}"></td>
+          <td th:text="${#strings.arrayJoin(chart.days, ', ')}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
